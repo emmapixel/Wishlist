@@ -1,6 +1,6 @@
 export const LoginSignup = () => {
   return (
-    <body>
+    <main>
         <section className="flex flex-col">
             <h2>Sign Up</h2>
             <form className="flex flex-col">
@@ -15,6 +15,6 @@ export const LoginSignup = () => {
                 <button type="submit">Sign Up</button>
             </form>
         </section> 
-    </body>
+    </main>
   )
 }
