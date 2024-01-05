@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "@remix-run/react";
 import { useState } from "react";
 import { useAppContext } from "~/context/app";
-import { signUp } from "~/firebase";
+import { createWishlistUser, signUp } from "~/firebase";
+import { WishlistUser } from "~/types/wishlistUser";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -20,6 +21,15 @@ export default function Login() {
         }
 
         console.log("Inloggad!", user);
+
+        const wishlistUser:WishlistUser = {
+            id: user.uid,
+            firstname,
+            lastname,
+            email,
+        }
+
+        await createWishlistUser(wishlistUser);
 
         setLoggedInUser(user);
         navigate("/");
