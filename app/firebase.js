@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, User } from "firebase/auth";
-import { doc, getFirestore, setDoc } from "firebase/firestore";
+import { doc, getDoc, getFirestore, setDoc, updateDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -35,4 +35,22 @@ const db = getFirestore(app);
 
 export const createWishlistUser = async (wishlistUser) => { 
   await setDoc(doc(db, "wishlistUsers", wishlistUser.id), wishlistUser);
+}
+
+export const getWishlistUser = async (id) => {
+  const docRef = doc(db, "wishlistUsers", id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else {
+    console.log("Could not find a wishlistUser with id " + id + ".");
+    return null;
+  }
+}
+
+export const updateWishlistUser = async (wishlistUser) => {
+  const wishlistUserRef = doc(db, "wishlistUsers", wishlistUser.id);
+
+  await updateDoc(wishlistUserRef, wishlistUser);
 }

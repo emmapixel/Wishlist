@@ -3,4 +3,5 @@ export type WishlistUser = {
     firstname: string;
     lastname: string;
     email: string;
+    wishlist: string[];
 }

@@ -24,6 +24,7 @@ export default function Index() {
           </h1>
           <p>This is the home page. Have fun!</p>
           <button onClick={logout}>Logga ut</button>
+          <button onClick={() => navigate("/profile")}>Profile</button>
       </main>
   );
 }
