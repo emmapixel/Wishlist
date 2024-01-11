@@ -69,7 +69,7 @@ export default function Profile() {
         <h1 className="text-xl font-bold">Min önskelista</h1>
         <div className="space-y-2">
             {
-                wishlistUser?.wishlist.map((item, index) => {
+                wishlistUser?.wishlist?.map((item, index) => {
                 return (
                     <div key={index} className="flex justify-between items-center w-full">
                         <h2>{item}</h2>

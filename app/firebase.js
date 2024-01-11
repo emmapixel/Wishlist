@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, User } from "firebase/auth";
-import { doc, getDoc, getFirestore, setDoc, updateDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, getFirestore, query, setDoc, updateDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -35,6 +35,14 @@ const db = getFirestore(app);
 
 export const createWishlistUser = async (wishlistUser) => { 
   await setDoc(doc(db, "wishlistUsers", wishlistUser.id), wishlistUser);
+}
+
+export const getAllWishlistUsers = async () => {
+  const q = query(collection(db, "wishlistUsers"));
+
+  const querySnapshot = await getDocs(q);
+  
+  return querySnapshot.docs.map(doc => doc.data());
 }
 
 export const getWishlistUser = async (id) => {
