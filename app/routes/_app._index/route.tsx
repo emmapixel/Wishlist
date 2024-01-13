@@ -32,7 +32,7 @@ export default function Index() {
   }
 
   return (
-      <main className="flex flex-col h-screen justify-center items-center bg-slate-200 space-y-4">
+      <main className="flex flex-col h-full justify-center items-center space-y-4">
         <h1 className="flex justify-center items-center text-3xl font-bold">
           Önskelistor
         </h1>
