@@ -6,7 +6,8 @@ type CollapsibleProps = {
     children: any;
   };
 
-export const Collapsible = ({ title, children }: CollapsibleProps) => {
+export const Collapsible = (props: CollapsibleProps) => {
+    const { title, children } = props;
     const [isOpen, setIsOpen] = useState(false);
 
     const summaryClickHandler = useCallback<MouseEventHandler<HTMLElement>>((event) => { 

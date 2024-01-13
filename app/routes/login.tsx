@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "@remix-run/react";
 import { useState } from "react";
+import { PrimaryButton } from "~/components/PrimaryButton";
 import { useAppContext } from "~/context/app";
 import { login } from "~/firebase";
 
@@ -58,7 +59,7 @@ export default function Login() {
                     </div>
 
                     <div className="pt-4">
-                        <button className="flex font-medium bg-blue-400 rounded-full px-4 py-2" type="submit">Logga in</button>
+                        <PrimaryButton title="Logga in" type="submit"/>
                     </div>
                 </form>
             <div className="flex space-x-4 mt-6">

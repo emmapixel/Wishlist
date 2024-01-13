@@ -1,6 +1,7 @@
 import { useNavigate } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { Collapsible } from "~/components/Collapsible";
+import { PrimaryButton } from "~/components/PrimaryButton";
 import { useAppContext } from "~/context/app";
 import { getAllWishlistUsers } from "~/firebase";
 import { WishlistUser } from "~/types/wishlistUser";
@@ -53,8 +54,8 @@ export default function Index() {
         </div>
 
           <div className="flex space-x-2">
-            <button className="flex font-medium bg-blue-400 rounded-full px-4 py-2" onClick={() => navigate("/profile")}>Profil</button>
-            <button className="flex font-medium bg-blue-400 rounded-full px-4 py-2" onClick={logout}>Logga ut</button>
+            <PrimaryButton title="Profil" onClick={() => navigate("/profile")}/>
+            <PrimaryButton title="Logga ut" onClick={logout}/>
           </div>
       </main>
   );

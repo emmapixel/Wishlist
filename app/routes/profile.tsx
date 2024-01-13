@@ -3,6 +3,7 @@ import { useNavigate } from "@remix-run/react";
 import { log } from "console";
 import { set } from "firebase/database";
 import { useEffect, useState } from "react";
+import { PrimaryButton } from "~/components/PrimaryButton";
 import { useAppContext } from "~/context/app";
 import { getWishlistUser, updateWishlistUser } from '~/firebase';
 import { WishlistUser } from "~/types/wishlistUser";
@@ -92,7 +93,7 @@ export default function Profile() {
                         onChange={(e) => setNewWish(e.target.value)}
                     />
                 <div>
-                    <button className="flex font-medium bg-blue-400 rounded-full px-4 py-2" type="submit">Lägg till</button>
+                    <PrimaryButton title="Lägg till" type="submit" />
                 </div>
             </div>
         </form>
