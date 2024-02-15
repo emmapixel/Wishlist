@@ -41,13 +41,19 @@ export default function Index() {
           {
             wishlistUsers.map((wishlistUser, index) => (
               <Collapsible key={index} title={`${wishlistUser.firstname} ${wishlistUser.lastname}`}>
-                <ul className="flex flex-col space-y-2">
-                  {
-                    wishlistUser.wishlist.map((wish, index) => (
-                      <li key={index}>{wish}</li>
-                    ))
-                  }
-                </ul>
+                {
+                  wishlistUser.wishlist.length === 0 
+                  ? <p>Ingen önskelista</p> 
+                  : (
+                    <ul className="flex flex-col space-y-2">
+                      {
+                        wishlistUser.wishlist.map((wish, index) => (
+                          <li key={index}>{wish}</li>
+                        ))
+                      }
+                    </ul>
+                    )
+                }
               </Collapsible>
             ))
           }

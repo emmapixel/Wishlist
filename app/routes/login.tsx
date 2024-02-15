@@ -17,9 +17,6 @@ export default function Login() {
         if (!user) {
             return;
         }
-
-        console.log("Inloggad!", user);
-
         setLoggedInUser(user);
         navigate("/");
     }

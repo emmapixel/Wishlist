@@ -21,8 +21,6 @@ export default function Login() {
             return;
         }
 
-        console.log("Inloggad!", user);
-
         const wishlistUser:WishlistUser = {
             id: user.uid,
             firstname,

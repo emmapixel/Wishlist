@@ -52,7 +52,6 @@ export const getWishlistUser = async (id) => {
   if (docSnap.exists()) {
     return docSnap.data();
   } else {
-    console.log("Could not find a wishlistUser with id " + id + ".");
     return null;
   }
 }
